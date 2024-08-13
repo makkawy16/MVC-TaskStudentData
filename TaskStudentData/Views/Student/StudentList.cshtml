@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var item in Model)
+            {
+             <tr>
+            <td>
+                        @item.Id
+            </td> 
+            <td>
+                         @item.Name
+            </td> 
+            <td>
+                    <img src="./images/@item.Img" />
+            </td> 
+            <td>
+                         @item.Address
+            </td> 
+
+            <td>
+            <a href="/student/getstudent/@item.Id"> go to details</a>
+            </td>
+            </tr>   
+            }
+        </tbody>
+    </table>
+}
